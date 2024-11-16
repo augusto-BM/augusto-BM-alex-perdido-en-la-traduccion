@@ -17,9 +17,14 @@ public class ControladorPuntos : MonoBehaviour
     void Awake(){
         if(Instance == null){
             Instance = this;
+            DontDestroyOnLoad(gameObject);  // Evita que el objeto sea destruido al cambiar de escena
         }else{
-            Debug.Log("Ya existe una instancia de ControladorPuntos");
+            Destroy(gameObject);  // Elimina el objeto si ya existe una instancia
         } 
+
+        // Inicializar los puntos con 50 al comenzar
+        PuntosTotales = 50;
+        canvasPuntos.ActualizarPuntos(PuntosTotales);
     }
     
     //PARA LAS MONEDAS
@@ -33,7 +38,10 @@ public class ControladorPuntos : MonoBehaviour
         vidas--;
         if(vidas == 0){
             //Reiniciar el nivel
-            SceneManager.LoadScene(1);
+            /* SceneManager.LoadScene(2); */
+
+            //Mostrar el canvas GameOver
+            FindObjectOfType<GameOver>().MostrarGameOver();
         }
         canvasPuntos.DesactivarVida(vidas);
     }
@@ -45,5 +53,17 @@ public class ControladorPuntos : MonoBehaviour
         canvasPuntos.ActivarVida(vidas);
         vidas++;
         return true; 
+    }
+
+    // Método para reiniciar los puntos
+    public void ReiniciarPuntos()
+    {
+        PuntosTotales = 50;  // Asignamos 50 puntos al reiniciar el juego.
+    }
+
+    // Método para reiniciar los puntos
+    public void MenuPrincipal()
+    {
+        PuntosTotales = 50;  // Asignamos 50 puntos al reiniciar el juego.
     }
 }

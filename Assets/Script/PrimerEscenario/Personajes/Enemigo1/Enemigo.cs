@@ -8,6 +8,9 @@ public class Enemigo : MonoBehaviour
     public float tiempoEsperaAtaque;
     private SpriteRenderer spriteRenderer;
 
+    //Para poner sonido de colision con el enemigo
+    public AudioClip sonidoColision;
+
     void Start(){
         spriteRenderer = GetComponent<SpriteRenderer>();
     } 
@@ -28,6 +31,9 @@ public class Enemigo : MonoBehaviour
 
             //Perdemos una vida 
             ControladorPuntos.Instance.PerderVida();
+
+            //Para poner sonido de salto de nuestro controlador de audios
+                ControladorAudios.Instance.ReproducirSonido(sonidoColision);
 
             //Aplicamos golpe al personaje
             other.gameObject.GetComponent<personajeMovimiento>().AplicarGolpe(); 
