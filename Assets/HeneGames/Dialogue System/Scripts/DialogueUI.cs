@@ -50,7 +50,7 @@ namespace HeneGames.DialogueSystem
         [SerializeField] private float textAnimationSpeed = 0.5f;
 
         [Header("Next sentence input")]
-        public KeyCode actionInput = KeyCode.Return; //letra enter
+        public KeyCode actionInput = KeyCode.Space; //letra enter
 
         private void Update()
         {
