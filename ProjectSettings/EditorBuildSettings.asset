@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PrimerEscenario.unity
     guid: b3345ac33407e1e4486d41877c495e70
+  - enabled: 1
+    path: Assets/Scenes/SistemaDePreguntas.unity
+    guid: 1ea6f49f23ad5274baf9717a63c03545
   m_configObjects: {}

@@ -8,6 +8,14 @@ public class CanvasPuntos : MonoBehaviour
     public GameObject[] vidas;
 
     // Update is called once per frame
+    void Start()
+    {
+        // Al iniciar, actualizar los puntos con el valor actual del ControladorPuntos-taboada          
+        if (ControladorPuntos.Instance != null)
+        {
+            ActualizarPuntos(ControladorPuntos.Instance.PuntosTotales);
+        }
+    }
     void Update()
     {
         puntos.text = ControladorPuntos.Instance.PuntosTotales.ToString();

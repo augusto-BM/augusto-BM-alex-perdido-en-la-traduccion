@@ -17,7 +17,7 @@ public class ControladorPuntos : MonoBehaviour
     void Awake(){
         if(Instance == null){
             Instance = this;
-            DontDestroyOnLoad(gameObject);  // Evita que el objeto sea destruido al cambiar de escena
+            DontDestroyOnLoad(gameObject);  // Evita que el objeto sea destruido al cambiar de escena           
         }else{
             Destroy(gameObject);  // Elimina el objeto si ya existe una instancia
         } 

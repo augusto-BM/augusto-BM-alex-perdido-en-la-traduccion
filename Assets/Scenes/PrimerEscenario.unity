@@ -1728,7 +1728,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.68, y: 1.12}
+    oldSize: {x: 0.53125, y: 0.875}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2191,6 +2191,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &416278590
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 185536522105990692, guid: 1936ee13113d91846a72d07fb95aa58a, type: 3}
+      propertyPath: m_Name
+      value: CartelInteract
+      objectReference: {fileID: 0}
+    - target: {fileID: 7502422958689787092, guid: 1936ee13113d91846a72d07fb95aa58a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 153.311
+      objectReference: {fileID: 0}
+    - target: {fileID: 7502422958689787092, guid: 1936ee13113d91846a72d07fb95aa58a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7502422958689787092, guid: 1936ee13113d91846a72d07fb95aa58a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.04394716
+      objectReference: {fileID: 0}
+    - target: {fileID: 7502422958689787092, guid: 1936ee13113d91846a72d07fb95aa58a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7502422958689787092, guid: 1936ee13113d91846a72d07fb95aa58a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7502422958689787092, guid: 1936ee13113d91846a72d07fb95aa58a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7502422958689787092, guid: 1936ee13113d91846a72d07fb95aa58a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7502422958689787092, guid: 1936ee13113d91846a72d07fb95aa58a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7502422958689787092, guid: 1936ee13113d91846a72d07fb95aa58a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7502422958689787092, guid: 1936ee13113d91846a72d07fb95aa58a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1936ee13113d91846a72d07fb95aa58a, type: 3}
 --- !u!1001 &433958795
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6477,7 +6534,7 @@ Transform:
   m_GameObject: {fileID: 1271155704}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0178728, y: -0.053999662, z: -10}
+  m_LocalPosition: {x: -0.80266666, y: -0.053999662, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7687,7 +7744,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.3626709, y: -5.9856873}
+  m_AnchoredPosition: {x: -1.3626709, y: -5.985718}
   m_SizeDelta: {x: 72.0203, y: 73.4359}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1426942635
@@ -8576,7 +8633,7 @@ Transform:
   m_GameObject: {fileID: 1645669813}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0178728, y: -0.053999662, z: -10}
+  m_LocalPosition: {x: -0.80266666, y: -0.053999662, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14789,3 +14846,4 @@ SceneRoots:
   - {fileID: 1447051861}
   - {fileID: 1298756945}
   - {fileID: 2025564083}
+  - {fileID: 416278590}
