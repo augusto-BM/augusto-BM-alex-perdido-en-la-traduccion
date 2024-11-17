@@ -1,35 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+
 public class CanvasPuntos : MonoBehaviour
 {
-    public TextMeshProUGUI puntos;
-    public GameObject[] vidas;
+    public TextMeshProUGUI puntos;  // Para mostrar los puntos
+    public GameObject[] vidas;     // Los corazones en el Canvas
 
-    // Update is called once per frame
-    void Start()
+    // Actualiza la visualización de los puntos
+    public void ActualizarPuntos(int puntosTotales)
     {
-        // Al iniciar, actualizar los puntos con el valor actual del ControladorPuntos-taboada          
-        if (ControladorPuntos.Instance != null)
-        {
-            ActualizarPuntos(ControladorPuntos.Instance.PuntosTotales);
-        }
-    }
-    void Update()
-    {
-        puntos.text = ControladorPuntos.Instance.PuntosTotales.ToString();
-    }
-
-    public void ActualizarPuntos(int  puntosTotales){
         puntos.text = puntosTotales.ToString();
     }
 
-    public void DesactivarVida(int indice){
-        vidas[indice].SetActive(false);
+    // Activa el corazón correspondiente a la vida
+    public void ActivarVida(int indice)
+    {
+        if (indice >= 0 && indice < vidas.Length)
+        {
+            vidas[indice].SetActive(true);
+        }
     }
 
-    public void ActivarVida(int indice){
-        vidas[indice].SetActive(true);
+    // Desactiva el corazón correspondiente a la vida
+    public void DesactivarVida(int indice)
+    {
+        if (indice >= 0 && indice < vidas.Length)
+        {
+            vidas[indice].SetActive(false);
+        }
     }
 }

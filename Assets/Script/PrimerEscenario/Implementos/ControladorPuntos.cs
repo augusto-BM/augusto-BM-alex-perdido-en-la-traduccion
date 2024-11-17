@@ -1,69 +1,136 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
- 
+
 public class ControladorPuntos : MonoBehaviour
 {
     public static ControladorPuntos Instance { get; private set; }
 
     public CanvasPuntos canvasPuntos;
 
-    public int PuntosTotales { get ; private set;}
-
-    //variable para las vidas inciales
+    public int PuntosTotales { get; private set; }
     private int vidas = 3;
 
-    void Awake(){
-        if(Instance == null){
+    private static bool reinicioEscena = false;
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
             Instance = this;
-            DontDestroyOnLoad(gameObject);  // Evita que el objeto sea destruido al cambiar de escena           
-        }else{
-            Destroy(gameObject);  // Elimina el objeto si ya existe una instancia
-        } 
+            if (!reinicioEscena)
+            {
+                DontDestroyOnLoad(gameObject);  // Solo usar DontDestroyOnLoad si no es un reinicio de escena
+            }
+            InicializarValores();
+        }
+        else
+        {
+            Destroy(gameObject);  // Si ya existe una instancia, destrúyela
+        }
 
         // Inicializar los puntos con 50 al comenzar
         PuntosTotales = 50;
         canvasPuntos.ActualizarPuntos(PuntosTotales);
     }
-    
-    //PARA LAS MONEDAS
-    public void SumarPuntos(int puntosASumar){
+
+    void InicializarValores()
+    {
+        if (!reinicioEscena)
+        {
+            PuntosTotales = 50;
+            vidas = 3;
+            canvasPuntos.ActualizarPuntos(PuntosTotales);
+
+            // Asegúrate de activar las 3 vidas
+            for (int i = 0; i < 3; i++)
+            {
+                canvasPuntos.ActivarVida(i);
+            }
+        }
+        else
+        {
+            reinicioEscena = false;  // Restablecer la bandera después de reiniciar
+        }
+    }
+
+    // Método para resetear valores al reiniciar la escena
+    public void ResetearValores()
+    {
+        reinicioEscena = true;  // Marcar que es un reinicio
+
+        // Destruir el controlador de puntos antes de recargar la escena
+        Destroy(gameObject);
+
+        // Cargar la escena correcta
+        SceneManager.LoadScene(2);
+
+        // Iniciar la corutina para recrear el controlador después de un tiempo.
+        StartCoroutine(RecrearControladorDespuésDeTiempo(10f)); // Esperar 10 segundos antes de recrear
+    }
+
+    private IEnumerator RecrearControladorDespuésDeTiempo(float tiempoEspera)
+    {
+        // Esperar el tiempo necesario antes de volver a crear el controlador
+        yield return new WaitForSeconds(tiempoEspera);
+
+        // Crear el controlador nuevamente
+        GameObject controladorNuevo = new GameObject("ControladorPuntos");
+        controladorNuevo.AddComponent<ControladorPuntos>();
+
+        // Marcarlo como persistente entre escenas
+        DontDestroyOnLoad(controladorNuevo);
+    }
+
+    public void SumarPuntos(int puntosASumar)
+    {
         PuntosTotales += puntosASumar;
         canvasPuntos.ActualizarPuntos(PuntosTotales);
     }
 
-    //PARA LAS VIDAS
-    public void PerderVida(){
+    public void PerderVida()
+    {
         vidas--;
-        if(vidas == 0){
-            //Reiniciar el nivel
-            /* SceneManager.LoadScene(2); */
+        if (vidas < 0) vidas = 0;
 
-            //Mostrar el canvas GameOver
+        if (vidas == 0)
+        {
+            // Mostrar Game Over
             FindObjectOfType<GameOver>().MostrarGameOver();
         }
-        canvasPuntos.DesactivarVida(vidas);
+
+        if (vidas >= 0 && vidas < canvasPuntos.vidas.Length)
+        {
+            canvasPuntos.DesactivarVida(vidas);
+        }
     }
 
-    public bool RecuperarVida(){
-        if(vidas == 3){
-            return false;
-        } 
-        canvasPuntos.ActivarVida(vidas);
-        vidas++;
-        return true; 
+    public bool RecuperarVida()
+    {
+        if (vidas < 3)
+        {
+            // Activar la vida en el Canvas (vida que se acaba de recuperar)
+            canvasPuntos.ActivarVida(vidas);
+            vidas++;
+            return true;
+        }
+        return false;
     }
 
-    // Método para reiniciar los puntos
     public void ReiniciarPuntos()
     {
         PuntosTotales = 50;  // Asignamos 50 puntos al reiniciar el juego.
     }
 
-    // Método para reiniciar los puntos
     public void MenuPrincipal()
     {
         PuntosTotales = 50;  // Asignamos 50 puntos al reiniciar el juego.
+    }
+
+    // Método para destruir el controlador cuando ya no se necesite
+    public void DestruirControlador()
+    {
+        reinicioEscena = false;
+        Destroy(gameObject);  // Destruir el objeto del controlador cuando ya no se necesite
     }
 }
