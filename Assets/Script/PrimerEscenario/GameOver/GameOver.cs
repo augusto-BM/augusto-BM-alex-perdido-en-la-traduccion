@@ -29,6 +29,22 @@ public class GameOver : MonoBehaviour
     {
         ControladorPuntos.Instance.MenuPrincipal();
         Time.timeScale = 1;
+
+        // Destruir todos los objetos en la escena antes de cambiar a la nueva escena
+        DestroyAllObjects();
+
         SceneManager.LoadScene(0);  // Cambiar al menú principal
+    }
+
+    private void DestroyAllObjects()
+    {
+        // Obtener todos los objetos en la escena
+        GameObject[] allObjects = FindObjectsOfType<GameObject>();
+
+        foreach (var obj in allObjects)
+        {
+            // Si el objeto es marcado con DontDestroyOnLoad, también se destruirá
+            Destroy(obj);
+        }
     }
 }

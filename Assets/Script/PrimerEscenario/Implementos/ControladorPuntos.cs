@@ -63,7 +63,7 @@ public class ControladorPuntos : MonoBehaviour
         Destroy(gameObject);
 
         // Cargar la escena correcta
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
 
         // Iniciar la corutina para recrear el controlador después de un tiempo.
         StartCoroutine(RecrearControladorDespuésDeTiempo(10f)); // Esperar 10 segundos antes de recrear
