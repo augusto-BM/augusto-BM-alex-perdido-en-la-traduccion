@@ -18,11 +18,15 @@ public class GameOver : MonoBehaviour
 
     public void ReiniciarNivel()
     {
-        // Resetear los valores y reiniciar la escena
-        ControladorPuntos.Instance.ResetearValores();
+
         // Reiniciar los puntos a 50 cuando se reinicia el nivel
         ControladorPuntos.Instance.ReiniciarPuntos();
         Time.timeScale = 1;
+
+        // Destruir todos los objetos en la escena antes de cambiar a la nueva escena
+        DestroyAllObjects();
+
+        SceneManager.LoadScene(1);
     }
 
     public void IrAlMenuPrincipal()
@@ -43,6 +47,20 @@ public class GameOver : MonoBehaviour
 
         foreach (var obj in allObjects)
         {
+            // Verificar si el objeto tiene el componente LogicaEntreEscenasMenu y no destruirlo
+            
+        if (obj.GetComponent<LogicaEntreEscenasMenu>() != null || 
+            obj.CompareTag("NoDestruir") || 
+            obj.name == "ControladorDeOpciones" || 
+            obj.name == "Canvas" ||
+            obj.name == "Panel Brillo"|| 
+            obj.name == "PhotonMono"
+            )
+        {
+            // Si tiene el componente LogicaEntreEscenasMenu, no destruirlo
+            continue;
+        }
+
             // Si el objeto es marcado con DontDestroyOnLoad, también se destruirá
             Destroy(obj);
         }

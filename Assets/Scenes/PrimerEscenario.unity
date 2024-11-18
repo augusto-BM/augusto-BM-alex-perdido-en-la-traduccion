@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiempoEsperaAtaque: 2
-  sonidoColision: {fileID: 8300000, guid: fa237e971d6ab3340b50bc061b672cd2, type: 3}
+  sonidoColision: {fileID: 8300000, guid: 11f31418efeadb743a44393493111f1e, type: 3}
 --- !u!50 &55446153
 Rigidbody2D:
   serializedVersion: 4
@@ -698,7 +698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiempoEsperaAtaque: 2
-  sonidoColision: {fileID: 8300000, guid: fa237e971d6ab3340b50bc061b672cd2, type: 3}
+  sonidoColision: {fileID: 8300000, guid: 11f31418efeadb743a44393493111f1e, type: 3}
 --- !u!50 &67632624
 Rigidbody2D:
   serializedVersion: 4
@@ -3643,7 +3643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiempoEsperaAtaque: 2
-  sonidoColision: {fileID: 8300000, guid: fa237e971d6ab3340b50bc061b672cd2, type: 3}
+  sonidoColision: {fileID: 8300000, guid: 11f31418efeadb743a44393493111f1e, type: 3}
 --- !u!50 &706274289
 Rigidbody2D:
   serializedVersion: 4
@@ -5905,7 +5905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiempoEsperaAtaque: 2
-  sonidoColision: {fileID: 8300000, guid: fa237e971d6ab3340b50bc061b672cd2, type: 3}
+  sonidoColision: {fileID: 8300000, guid: 11f31418efeadb743a44393493111f1e, type: 3}
 --- !u!50 &1117757263
 Rigidbody2D:
   serializedVersion: 4
@@ -6917,7 +6917,7 @@ Transform:
   m_GameObject: {fileID: 1271155704}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.198025, y: -0.053999662, z: -10}
+  m_LocalPosition: {x: -14.305312, y: -0.053999662, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9016,7 +9016,7 @@ Transform:
   m_GameObject: {fileID: 1645669813}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.198025, y: -0.053999662, z: -10}
+  m_LocalPosition: {x: -14.305312, y: -0.053999662, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10646,7 +10646,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_Sprite: {fileID: -1167760557, guid: f1c752e986616444696cf88359e36938, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -15306,7 +15306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiempoEsperaAtaque: 2
-  sonidoColision: {fileID: 8300000, guid: fa237e971d6ab3340b50bc061b672cd2, type: 3}
+  sonidoColision: {fileID: 8300000, guid: 11f31418efeadb743a44393493111f1e, type: 3}
 --- !u!50 &2102951771
 Rigidbody2D:
   serializedVersion: 4
@@ -15607,7 +15607,7 @@ MonoBehaviour:
   minimadistancia: 3
   distanciaMaxima: 5
   player: {fileID: 329710571}
-  sonidoColision: {fileID: 8300000, guid: fa237e971d6ab3340b50bc061b672cd2, type: 3}
+  sonidoColision: {fileID: 0}
 --- !u!114 &2123594739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15622,6 +15622,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   proyectilPrefab: {fileID: 2628956620042048015, guid: a73177423c53cd54abec3bf433ff5c0b, type: 3}
   tiempoEntreDisparos: 3
+  distanciaDisparo: 12
+  player: {fileID: 0}
+  sonidoDisparoEnemigo: {fileID: 8300000, guid: 6a1eb0d6e06eb4c43858818926252dca, type: 3}
 --- !u!4 &2140980517 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4078334097002595578, guid: b7dbd5169b625f34b852890c3c7c2cda, type: 3}
