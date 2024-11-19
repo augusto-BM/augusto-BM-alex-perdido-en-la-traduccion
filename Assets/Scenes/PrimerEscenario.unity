@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 55446153}
   - component: {fileID: 55446152}
   - component: {fileID: 55446151}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemigo1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 67632624}
   - component: {fileID: 67632623}
   - component: {fileID: 67632622}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemigo1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3127,6 +3127,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528564841}
   m_CullTransparentMesh: 1
+--- !u!1 &543961796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 543961797}
+  m_Layer: 0
+  m_Name: PuntoInicio
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &543961797
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543961796}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.20999908, y: 0, z: 0.012331349}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 329710571}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &564126503
 GameObject:
   m_ObjectHideFlags: 0
@@ -3592,7 +3623,7 @@ GameObject:
   - component: {fileID: 706274289}
   - component: {fileID: 706274288}
   - component: {fileID: 706274287}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemigo3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5854,7 +5885,7 @@ GameObject:
   - component: {fileID: 1117757263}
   - component: {fileID: 1117757262}
   - component: {fileID: 1117757261}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemigo1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6917,7 +6948,7 @@ Transform:
   m_GameObject: {fileID: 1271155704}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.305312, y: -0.053999662, z: -10}
+  m_LocalPosition: {x: -12.564174, y: -0.053999662, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6937,7 +6968,7 @@ GameObject:
   - component: {fileID: 1287172935}
   - component: {fileID: 1287172934}
   - component: {fileID: 1287172936}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SnackMaquina
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7435,7 +7466,7 @@ GameObject:
   - component: {fileID: 1306627620}
   - component: {fileID: 1306627619}
   - component: {fileID: 1306627621}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TachoBasura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8127,7 +8158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.3626709, y: -5.985718}
+  m_AnchoredPosition: {x: -1.3626709, y: -5.9857025}
   m_SizeDelta: {x: 72.0203, y: 73.4359}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1426942635
@@ -8941,7 +8972,7 @@ GameObject:
   - component: {fileID: 1645669815}
   - component: {fileID: 1645669814}
   - component: {fileID: 1645669817}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -9016,7 +9047,7 @@ Transform:
   m_GameObject: {fileID: 1645669813}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.305312, y: -0.053999662, z: -10}
+  m_LocalPosition: {x: -12.564174, y: -0.053999662, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10599,7 +10630,7 @@ GameObject:
   - component: {fileID: 1833510136}
   - component: {fileID: 1833510135}
   - component: {fileID: 1833510137}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Banco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15255,7 +15286,7 @@ GameObject:
   - component: {fileID: 2102951771}
   - component: {fileID: 2102951770}
   - component: {fileID: 2102951769}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemigo3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15445,7 +15476,7 @@ GameObject:
   - component: {fileID: 2123594735}
   - component: {fileID: 2123594738}
   - component: {fileID: 2123594739}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemigo2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15825,6 +15856,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2468530376887726665, guid: b4511ae7e072b5744a14d22dbb0000f5, type: 3}
+      propertyPath: nBala
+      value: 
+      objectReference: {fileID: 4535724760466369024, guid: 41d59dbb565d87a489a9e99b54f09d1c, type: 3}
+    - target: {fileID: 2468530376887726665, guid: b4511ae7e072b5744a14d22dbb0000f5, type: 3}
+      propertyPath: FirePoint
+      value: 
+      objectReference: {fileID: 543961797}
+    - target: {fileID: 2468530376887726665, guid: b4511ae7e072b5744a14d22dbb0000f5, type: 3}
+      propertyPath: sonidoBala
+      value: 
+      objectReference: {fileID: 8300000, guid: c8c300c53489e1f488e79639a23b785e, type: 3}
     - target: {fileID: 4183618189136107304, guid: b4511ae7e072b5744a14d22dbb0000f5, type: 3}
       propertyPath: m_Name
       value: Personaje
@@ -15883,7 +15926,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7573011486023023450, guid: b4511ae7e072b5744a14d22dbb0000f5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 543961797}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4511ae7e072b5744a14d22dbb0000f5, type: 3}
 --- !u!1001 &3736674376854503232

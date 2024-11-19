@@ -19,8 +19,12 @@ public class personajeMovimiento : MonoBehaviour
 
     //Para poner sonido de salto de nuestro objeto peronaje
     public AudioClip sonidoSalto;
+    public AudioClip sonidoBala;
 
     private Rigidbody2D rb;
+
+    public Transform FirePoint;
+    public GameObject nBala;
 
     // Solo si se quiere hacer animaciones
     /* private Animator anim; */
@@ -51,6 +55,17 @@ public class personajeMovimiento : MonoBehaviour
             else if (moverObjeto < 0)
             {
                 transform.localScale = new Vector3(-1, 1, 1);
+            }
+
+            //evento balas tecla enter
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+            {
+                //Para poner sonido de salto de nuestro controlador de audios
+                ControladorAudios.Instance.ReproducirSonido(sonidoBala);
+
+                /* Instantiate(nBala, FirePoint.position, Quaternion.identity); */
+                Instantiate(nBala, FirePoint.position, FirePoint.rotation);
+                
             }
 
 

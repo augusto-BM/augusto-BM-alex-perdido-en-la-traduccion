@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - opciones
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -12,8 +13,8 @@ TagManager:
   - Suelo
   - Water
   - UI
-  - 
-  - 
+  - Enemigo
+  - Objetos
   - 
   - 
   - 
