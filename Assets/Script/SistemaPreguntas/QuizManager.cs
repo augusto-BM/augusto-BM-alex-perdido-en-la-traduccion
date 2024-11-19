@@ -20,6 +20,7 @@ public class QuizManager : MonoBehaviour
     public TextMeshProUGUI QuestionTxt;
     public TextMeshProUGUI ScoreTxt;
     public TextMeshProUGUI ScoreTxt2;
+    public TextMeshProUGUI ScoreTxt3;
 
 
     public AudioClip correctAnswerSound; // Sonido para respuesta correcta
@@ -29,6 +30,7 @@ public class QuizManager : MonoBehaviour
     public int pointsPerCorrectAnswer = 10;  // Puntos por respuesta correcta
     public int pointsPerWrongAnswer = 5;    // Puntos que se restan por respuesta incorrecta
     public int ScoreP;
+  
 
     int TotalQuestions = 0;
     public int Score;
@@ -37,6 +39,12 @@ public class QuizManager : MonoBehaviour
         TotalQuestions = QnA.Count;
         GoPanel.SetActive(false);
         audioSource = GetComponent<AudioSource>(); // Referencia al AudioSource
+        // Inicializar ScoreP con los puntos actuales del ControladorPuntos
+        if (ControladorPuntos.Instance != null)
+        {
+            ScoreP = ControladorPuntos.Instance.PuntosTotales;
+            UpdateScoreUI(); // Actualizar UI con los puntos iniciales
+        }
         generateQuestion();
     }
 
@@ -54,16 +62,18 @@ public class QuizManager : MonoBehaviour
         // Enviar los puntos al ControladorPuntos
         if (ControladorPuntos.Instance != null)
         {
-            ControladorPuntos.Instance.SumarPuntos(ScoreP);
+            // Si los puntos llegaron a 0, reiniciar los puntos del controlador
+            if (ScoreP <= 0)
+            {
+                ControladorPuntos.Instance.ReiniciarPuntos();
+            }
+            else
+            {
+                ControladorPuntos.Instance.SumarPuntos(ScoreP - ControladorPuntos.Instance.PuntosTotales);
+            }
         }
-        // Esperar un poco antes de cambiar de escena
-        StartCoroutine(CambiarEscenaConDelay());
-    }
-
-    private IEnumerator CambiarEscenaConDelay()
-    {
-        yield return new WaitForSeconds(5f); // Espera 2 segundos
-        SceneManager.LoadScene("PrimerEscenario"); // Reemplaza con el nombre de tu escena
+        
+       
     }
 
     public void Correct_P()
@@ -80,7 +90,14 @@ public class QuizManager : MonoBehaviour
     {
         //Cuando la pregunta es incorrecta
         ScoreP -= pointsPerWrongAnswer; // Restar puntos por respuesta incorrecta
-        if (ScoreP < 0) ScoreP = 0; // Asegurarse de que el puntaje no sea negativo
+        // Verificar si los puntos llegan a 0 o menos
+        if (ScoreP <= 0)
+        {
+            ScoreP = 0;
+            UpdateScoreUI();
+            GameOver(); // Llamar a GameOver si los puntos llegan a 0
+            return; // Salir del método para no generar más preguntas
+        }
         audioSource.PlayOneShot(wrongAnswerSound); // Reproducir sonido incorrecto
         UpdateScoreUI();
         QnA.RemoveAt(currentQuestion);
@@ -89,7 +106,9 @@ public class QuizManager : MonoBehaviour
 
     public void UpdateScoreUI()
     {
+        //Actualiza los puntos
         ScoreTxt2.text = ScoreP.ToString();//convierte el int en string para poder mostrar el puntaje
+        ScoreTxt3.text = ScoreP.ToString();
     }
 
 
@@ -100,7 +119,7 @@ public class QuizManager : MonoBehaviour
         {
             if (i < QnA[currentQuestion].Answers.Length) // Verifica que el índice esté dentro del rango
             {
-                //options[i].GetComponent<Image>().color = options[i].GetComponent<AnswerScript>().startColor;
+
                 options[i].GetComponent<AnswerScript>().isCorrect = false;
                 options[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = QnA[currentQuestion].Answers[i];
 
