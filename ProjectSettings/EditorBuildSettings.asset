@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SistemaDePreguntas.unity
     guid: 1ea6f49f23ad5274baf9717a63c03545
+  - enabled: 1
+    path: Assets/Scenes/EndGame.unity
+    guid: 9b96659e5522acc4d818a953dad17f67
   m_configObjects: {}

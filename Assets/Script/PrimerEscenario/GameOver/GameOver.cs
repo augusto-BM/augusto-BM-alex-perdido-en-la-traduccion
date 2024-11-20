@@ -35,9 +35,29 @@ public class GameOver : MonoBehaviour
         Time.timeScale = 1;
 
         // Destruir todos los objetos en la escena antes de cambiar a la nueva escena
-        DestroyAllObjects();
+        DestroyAllObjectsMenu();
 
         SceneManager.LoadScene(0);  // Cambiar al menú principal
+    }
+
+    private void DestroyAllObjectsMenu()
+    {
+                // Obtener todos los objetos en la escena
+        GameObject[] allObjects = FindObjectsOfType<GameObject>();
+
+        foreach (var obj in allObjects)
+        {
+            
+        if (obj.name == "PhotonMono")
+        {
+            // Si tiene el componente LogicaEntreEscenasMenu, no destruirlo
+            continue;
+        }
+
+            // Si el objeto es marcado con DontDestroyOnLoad, también se destruirá
+            Destroy(obj);
+        }
+
     }
 
     private void DestroyAllObjects()

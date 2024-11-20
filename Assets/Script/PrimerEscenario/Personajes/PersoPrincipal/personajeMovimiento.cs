@@ -27,14 +27,14 @@ public class personajeMovimiento : MonoBehaviour
     public GameObject nBala;
 
     // Solo si se quiere hacer animaciones
-    /* private Animator anim; */
+    private Animator anim;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         
         // Solo si se quiere hacer animaciones
-        /* anim = GetComponent<Animator>(); */
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -57,7 +57,7 @@ public class personajeMovimiento : MonoBehaviour
                 transform.localScale = new Vector3(-1, 1, 1);
             }
 
-            //evento balas tecla enter
+            //EVENTO PARA DISPARAR BALA CON LA TECLA ENTER
             if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
             {
                 //Para poner sonido de salto de nuestro controlador de audios
@@ -65,7 +65,13 @@ public class personajeMovimiento : MonoBehaviour
 
                 /* Instantiate(nBala, FirePoint.position, Quaternion.identity); */
                 Instantiate(nBala, FirePoint.position, FirePoint.rotation);
+
+                // Activar la animación de disparo
+                anim.SetBool("Disparar", true);
                 
+            }else{
+                // Desactivar la animación de disparo cuando no se está disparando
+                anim.SetBool("Disparar", false);
             }
 
 
@@ -89,11 +95,11 @@ public class personajeMovimiento : MonoBehaviour
             // Solo si se quiere hacer animaciones
             /* if (moverObjeto != 0)
             {
-                anim.SetBool("estaCorriendo", true);
+                anim.SetBool("Disparar", true);
             }
             else
             {
-                anim.SetBool("estaCorriendo", false);
+                anim.SetBool("Disparar", false);
             } */
         /* ===================================================================== */
 

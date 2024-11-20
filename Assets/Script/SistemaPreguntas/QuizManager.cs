@@ -30,7 +30,8 @@ public class QuizManager : MonoBehaviour
     public int pointsPerCorrectAnswer = 10;  // Puntos por respuesta correcta
     public int pointsPerWrongAnswer = 5;    // Puntos que se restan por respuesta incorrecta
     public int ScoreP;
-  
+
+    public string siguienteEscena = "EndGame";  
 
     int TotalQuestions = 0;
     public int Score;
@@ -96,7 +97,7 @@ public class QuizManager : MonoBehaviour
             ScoreP = 0;
             UpdateScoreUI();
             GameOver(); // Llamar a GameOver si los puntos llegan a 0
-            return; // Salir del método para no generar más preguntas
+            return; // Salir del mï¿½todo para no generar mï¿½s preguntas
         }
         audioSource.PlayOneShot(wrongAnswerSound); // Reproducir sonido incorrecto
         UpdateScoreUI();
@@ -117,7 +118,7 @@ public class QuizManager : MonoBehaviour
         
         for (int i = 0; i < options.Length; i++)
         {
-            if (i < QnA[currentQuestion].Answers.Length) // Verifica que el índice esté dentro del rango
+            if (i < QnA[currentQuestion].Answers.Length) // Verifica que el ï¿½ndice estï¿½ dentro del rango
             {
 
                 options[i].GetComponent<AnswerScript>().isCorrect = false;
@@ -130,7 +131,7 @@ public class QuizManager : MonoBehaviour
             }
             else
             {
-                // Oculta el botón si no hay suficientes respuestas para esta pregunta
+                // Oculta el botï¿½n si no hay suficientes respuestas para esta pregunta
                 options[i].SetActive(false);
             }
         }
@@ -149,7 +150,7 @@ public class QuizManager : MonoBehaviour
         }
         else
         {
-            // Mostrar un mensaje de finalización del quiz en consola.
+            // Mostrar un mensaje de finalizaciï¿½n del quiz en consola.
             Debug.LogWarning("No hay preguntas disponibles en la lista QnA.");
             GameOver();
 
@@ -159,8 +160,9 @@ public class QuizManager : MonoBehaviour
 
     public void ExitGame()
     {
-        Debug.Log("Saliendo del juego...");
-        Application.Quit();
+        /* Debug.Log("Saliendo del juego...");
+        Application.Quit(); */
+        SceneManager.LoadScene(siguienteEscena);
     }
 
 

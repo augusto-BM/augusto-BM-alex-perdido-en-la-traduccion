@@ -4,7 +4,7 @@ using UnityEngine.Video;
 
 public class Introduccion : MonoBehaviour
 {
-     public VideoPlayer videoPlayer;
+    public VideoPlayer videoPlayer;
     public string siguienteEscena = "PrimerEscenario";  
 
     void Start()
