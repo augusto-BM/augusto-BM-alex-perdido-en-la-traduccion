@@ -6980,7 +6980,7 @@ Transform:
   m_GameObject: {fileID: 1271155704}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.998705, y: -0.053999662, z: -10}
+  m_LocalPosition: {x: -12.735916, y: -0.053999662, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9087,7 +9087,7 @@ Transform:
   m_GameObject: {fileID: 1645669813}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.998705, y: -0.053999662, z: -10}
+  m_LocalPosition: {x: -12.735916, y: -0.053999662, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14765,6 +14765,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2019814870}
   m_CullTransparentMesh: 1
+--- !u!114 &2025053878 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5236577727439188513, guid: b4511ae7e072b5744a14d22dbb0000f5, type: 3}
+  m_PrefabInstance: {fileID: 2788509800937704908}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da6c51194ab84042bc718fd8ead8aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2025564079
 GameObject:
   m_ObjectHideFlags: 0
@@ -15928,6 +15939,14 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6534007700022565730, guid: b4511ae7e072b5744a14d22dbb0000f5, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.53125
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534007700022565730, guid: b4511ae7e072b5744a14d22dbb0000f5, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.875
+      objectReference: {fileID: 0}
     - target: {fileID: 7573011486023023450, guid: b4511ae7e072b5744a14d22dbb0000f5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18
@@ -15968,6 +15987,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7872819762627345913, guid: b4511ae7e072b5744a14d22dbb0000f5, type: 3}
+      propertyPath: codigosQueIgnorar.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872819762627345913, guid: b4511ae7e072b5744a14d22dbb0000f5, type: 3}
+      propertyPath: codigosQueIgnorar.Array.data[2]
+      value: 
+      objectReference: {fileID: 2025053878}
     - target: {fileID: 8466756078586726719, guid: b4511ae7e072b5744a14d22dbb0000f5, type: 3}
       propertyPath: m_Size.x
       value: 0.53125
